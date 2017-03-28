@@ -23,7 +23,7 @@ module ActiveRecord
         binds
       end
 
-      def last_chain_scope(scope, *args)
+      def last_chain_scope(scope, table, reflection, owner, association_klass)
         join_keys = reflection.join_keys(association_klass)
         key = join_keys.key
         foreign_key = join_keys.foreign_key
